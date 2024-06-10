@@ -327,27 +327,14 @@
 <h2>Abstract</h2>
 <p>
 
-In the context of collaborative software development, the merging
-process of concurrent changes poses significant challenges, particularly in detecting and resolving merge conflicts efficiently and
-accurately. Developers typically use unstructured, line-based merge
-tools to detect and resolve merge conflicts. To address their limitations, researchers have then proposed structured, AST-based tools
-that leverage programming language syntax for better conflict detection and resolution. While these tools significantly reduce merge
-conflicts, they are difficult to develop and computationally demanding, hindering practical adoption. Alternatively, semistructured
-merge tools partially utilize the syntactic structure of the source
-code and revert to the standard textual approach when this information is insufficient for detecting and resolving merge conflicts.
-In this paper, we introduce a novel semistructured merge approach
-designed to emulate the capabilities of fully structured merge tools
-while avoiding their development and performance costs. Our solution — s3m-CSDIFF— leverages language-specific syntactic separa-
-tors at the statement level, rather than merely comparing lines of
-text, to enhance the accuracy and efficiency of change comparison
-and merging. We then evaluate the proposed tool against standard unstructured and semistructured merge tools. Our findings
-reveal that s3m-CSDIFF significantly reduces the number of merge
-conflicts and files with merge conflicts. Besides that, s3m-CSDIFF
-almost eliminates standard unstructured and semistructured false
-conflicts. However, similar to fully structured tools, it tends to let
-some merge conflicts go undetected. Finally, we also observed that
-incorporating language-specific syntactic separators introduces
-unique textual alignment challenges.
+Structured merge tools exploit programming language syntactic structure to enhance merge accuracy by reducing spurious conflicts reported by unstructured tools. 
+By creating and handling full ASTs, structured tools are language-specific and harder to implement. They can also be computationally expensive when merging large files.
+To reduce these drawbacks, semistructured merge tools work with partial ASTs that use strings to represent lower level syntactic structures such as method bodies, and rely on unstructured tools to merge them. 
+This, however, results in merge accuracy loss. To improve accuracy without compromising semistructured merge benefits, we propose a tool that leverages language-specific syntactic separators to infer structure without parsing.
+We still resort to an unstructured tool to merge lower level structures, but only after preprocessing the code so that text in between separators such as curly braces appear in separate lines.  
+This way we emulate the capabilities of structured merge tools while avoiding their drawbacks. By comparing our tool with a robust implementation of semistructured merge, we find that our tool substantially reduces the number of spurious conflicts.
+We also observe significant but less substantial reductions on the overall number of reported conflicts, and of files with conflicts. However, similar to structured tools, our tool lets more merge conflicts go undetected.
+Our tool shows significant improvements over unstructured tools widely used in practice. Finally we observe that exploiting language-specific syntactic separators introduces unique textual alignment challenges. 
 
 </p>
 <h3>Authors</h3>
