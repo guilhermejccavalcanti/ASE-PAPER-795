@@ -1,0 +1,10 @@
+path,name
+https://github.com/apache/accumulo,accumulo
+https://github.com/FasterXML/jackson-databind,jackson-databind 
+https://github.com/HubSpot/Singularity,Singularity  
+https://github.com/spring-projects/spring-boot,spring-boot 
+https://github.com/mockito/mockito,mockito
+https://github.com/spring-projects/spring-framework,spring-framework
+https://github.com/libgdx/libgdx,libgdx
+https://github.com/jenkinsci/jenkins,jenkins 
+https://github.com/alibaba/fastjson,fastjson
