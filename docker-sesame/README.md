@@ -24,11 +24,15 @@ Run `docker run --rm -it docker-sesame bash`
 
 To run the experiment, use the following command:
 
-`gradle run --args="-i injectors.S3MWithCSDiffMiningModule projects.csv Results"`
+`gradle run --args="-i injectors.S3MWithCSDiffMiningModule -s 12/21/2019 -u 10/23/2021 projects.csv Results"`
+
+> The `-s` flag sets a starting date to mine the repositories, while the `-u` flag sets the finish date.
 
 > `projects.csv` is the file containing our sample projects' GitHub repositories, located in the `/miningframework/` folder from this replication package.
 
 > `Results` is a folder generated during the execution of the experiment.
+
+> Note that a single run may take several hours to finish (e.g., it takes about 3 hours on a Ryzen 7800X3D with 32GB DDR5).
 
 #### To Copy the Result Files to Your Machine:
 
