@@ -37,7 +37,7 @@ To run the experiment, use the following command:
 #### To Copy the Result Files to Your Machine:
 
 1. Open another terminal while keeping the first one open.
-2. Run the command: `docker run --rm s3misi; $CONTAINERID = $(docker ps -alq); docker cp $CONTAINERID/:/home/miningframework/Results ./Results` 
+2. Run the command: `docker run --rm docker-sesame; $CONTAINERID = $(docker ps -alq); docker cp $CONTAINERID/:/home/miningframework/Results ./Results` 
 3. The `Results` folder from the container is now copied to your machine. It contains:
    - A `results.csv` file aggregating the metrics of the experiment.
    - A folder for each project in our sample, containing the merge scenarios and the output of the merge tools for each merged file.

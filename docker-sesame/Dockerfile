@@ -16,10 +16,10 @@ RUN export JAVA_HOME
 # Install sdkman for other dependencies management
 RUN curl -s "https://get.sdkman.io" | bash
 
-# This SHELL command is needed to allow using source
+# this SHELL command is needed to allow using source
 SHELL ["/bin/bash", "-c"]    
 
-# You need to put 'sdk install...'' lines in same RUN command as 'source...'.
+# seems you need to put 'sdk install...'' lines in same RUN command as 'source...'.
 RUN source "/root/.sdkman/bin/sdkman-init.sh"   \
                 && sdk install gradle 6.6       \
                 && sdk install groovy 3.0.0
@@ -28,4 +28,3 @@ RUN source "/root/.sdkman/bin/sdkman-init.sh"   \
 COPY miningframework /home/miningframework
 
 WORKDIR /home/miningframework
-
