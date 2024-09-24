@@ -28,7 +28,7 @@ To run the experiment, use the following command:
 
 > The `-s` flag sets a starting date to mine the repositories, while the `-u` flag sets the finish date.
 
-> `projects.csv` is the file containing our sample projects' GitHub repositories, located in the `/miningframework/` folder from this replication package.
+> `projects.csv` is the file containing our sample projects' GitHub repositories, located in the `/miningframework/` folder from this replication package. You can edit this file to run the experiment with a sample or your choice.
 
 > `Results` is a folder generated during the execution of the experiment.
 
